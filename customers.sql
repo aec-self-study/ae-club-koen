@@ -3,7 +3,8 @@ select
   c.name,
   c.email,
   min(o.created_at) as first_order_at,
-  count(o.id) as number_of_orders
+  count(o.id) as number_of_orders,
+  sum(o.total) as total_spent
 from 
   `analytics-engineers-club.coffee_shop.customers` c
   join `analytics-engineers-club.coffee_shop.orders` o
