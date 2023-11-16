@@ -1,14 +1,14 @@
 select 
-  c.id, 
-  c.name,
-  c.email,
-  min(o.created_at) as first_order_at,
-  count(o.id) as number_of_orders,
-  sum(o.total) as total_spent
+  customers.id as customer_id, 
+  customers.name,
+  customers.email,
+  min(orders.created_at) as first_order_at,
+  count(orders.id) as number_of_orders,
+  sum(orders.total) as total_spent
 from 
-  `analytics-engineers-club.coffee_shop.customers` c
-  join `analytics-engineers-club.coffee_shop.orders` o
-    on c.id = o.customer_id
+  {{ source('coffee_shop', 'customers') }} customers
+  join {{ source('coffee_shop', 'orders') }} orders
+    on customers.id = orders.customer_id
 group by
   1,2,3
 order by
