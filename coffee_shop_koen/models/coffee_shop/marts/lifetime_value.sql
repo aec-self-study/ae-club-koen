@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized = "table",
+    cluster_by = "week_start_date",
+  )
+}}
 with 
     weeks as (
         select distinct

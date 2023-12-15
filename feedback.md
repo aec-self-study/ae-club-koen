@@ -2,6 +2,7 @@
 
 ## Major
 * How to design and build a data model was good. Good details and tips for new and experienced users.
+* Advanced SQL was good, good exercises.
 
 ## Minor
 * There is exercise for the Deployment Enviroments 
