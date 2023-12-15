@@ -1,5 +1,5 @@
 select 
-    id as item_id,
+    id as product_id,
     name,
     category,
     created_at
