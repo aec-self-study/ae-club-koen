@@ -19,7 +19,7 @@ with
             customers.customer_id,
             cast(customers.first_order_at as date) as first_order_date
         from
-            {{ref('customers')}} as customers
+            {{ref('int_customers')}} as customers
     ),
 
     sales as (
@@ -28,7 +28,7 @@ with
             orders.customer_id,
             orders.total
         from 
-            {{ref('orders')}} as orders
+            {{ref('stg_orders')}} as orders
     ),
 
     weekly_revenue as (
